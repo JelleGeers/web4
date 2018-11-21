@@ -1,0 +1,51 @@
+<div class="loginform">
+  <div  *ngIf='errorMsg' class="error center">{{errorMsg}}</div>
+  <form [formGroup]='examennaam' (ngSubmit)='onSubmit()' class="toevoegen">
+    <h4 class="center">Examenvragen toevoegen</h4>
+    <div class="center">
+      <label for="name_id">Vaknaam</label>
+      <input id="name" name="name_id" formControlName='name' class="form-control" data-test="examennaamName">
+      <div *ngIf='examennaam.get("name").errors?.required && examennaam.get("name").touched'>
+        Een examennaam moet minimaal 2 karakters lang zijn
+      </div>
+    </div>
+
+    <div>
+      <label for="vraag_name"></label>
+      <div formArrayName='vragen' *ngFor='let item of vragen.controls; 
+          let i = index'>
+        <div [formGroupName]='i'>
+          <div>
+            <div class="center">
+              <label>Op hoeveel punten stond de vraag?(totaal toets/examen herberekenen naar 100)</label>
+              <input class="form-control" type="text" id="vraag_amount" formControlName='amount' data-test="vraagAmount">
+            </div>
+<!--             <div style="text-align:center">
+              <label>Wat vond je van deze vraag?</label>
+              <div>
+<!--               <select id="vraag_difficultytype" formControlName='difficulty'>
+                <select *ngFor='let type of difficultyTypes' [value]='type' data-test="vraagType">
+                  {{type}}
+                </select>
+              </select> -->
+             <!--  </div> -->
+              
+            <!-- </div> -->
+            <div class="center">
+              <label>Welke vraag werd er gesteld? </label>
+              <input class="form-control" type="text" id="vraag_name" formControlName='vraagname' data-test="vraagName">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="center">
+    <button class="btn btn-primary" type='submit' data-test="addExamennaamBtn">
+        toevoegen
+      </button>
+      </div>
+      <br>
+    </form>
+  
+</div>

@@ -1,0 +1,20 @@
+<br>
+<div class="card">
+  <div class="padding">
+    <div class="proberen achtergrond">
+    <a class="proberen" href='/examennaam/{{examennaam.id}}'>{{ examennaam.name }}</a>
+    <div>
+      </div>
+    </div>
+      <span>gemaakt op {{examennaam.dateAdded | date}} door {{ examennaam.maker }}</span>
+    
+    <ul>
+      <li *ngFor='let vra of examennaam.vragen'>
+        <app-vraag [vraag]='vra'></app-vraag>
+      </li>
+    </ul>
+    <button class="btn btn-danger"(click)="removeExamennaam()" data-test="removeExamennaamBtn">
+      verwijder
+    </button>
+  </div>
+</div>

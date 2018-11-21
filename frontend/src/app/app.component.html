@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <a class="navbar-brand" routerLinkActive='active' routerLink="examennaam/list">Examens</a>
+    </div>
+    <div class="col text-center">
+      <a routerLinkActive='active' routerLink="examennaam/add">Examen toevoegen</a>
+    </div>
+    <div class="col text-right">
+      <a *ngIf='(currentUser | async) else loginlink' routerLinkActive='active' routerLink="/logout">{{currentUser|async}}</a>
+    </div>
+    <ng-template #loginlink>
+      <a routerLinkActive='active' routerLink="/login">log in</a>
+    </ng-template>
+  </div>
+</div>
+<router-outlet></router-outlet>

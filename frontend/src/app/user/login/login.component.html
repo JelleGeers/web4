@@ -1,0 +1,17 @@
+
+<div class="loginform witruimte" >
+<div *ngIf='errorMsg' class="error center">{{errorMsg}}</div>
+<form [formGroup]='user' (ngSubmit)='onSubmit()'>
+  <h3>login</h3>
+  <div class="form-group">
+    <label for="username">gebruikersnaam:</label>
+    <input type="text" placeholder="bv: johanDeLange"id="username" formControlName='username' class="form-control" data-test="username" >
+  </div>
+  <div class="form-group">
+    <label for="password">passwoord:</label>
+  <input placeholder="geheimpje"type="password" id="password" formControlName='password'  class="form-control" data-test="password">
+  </div>
+  <button type='submit' [disabled]='!user.valid' id='loginbtn'  class="btn btn-primary" data-test="loginBtn">log in</button>
+  <a routerLink="/register" class="btn btn-outline-primary float-right"  >registreer</a>
+</form>
+</div>

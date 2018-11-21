@@ -1,0 +1,17 @@
+<div class="loginform">
+  <div *ngIf='errorMsg'>{{errorMsg}}</div>
+  <div>
+    <div>
+      <div>
+        <input class="form-control mr-sm-2" (keyup)='filterExamennaam$.next($event.target.value)' type='text' id='filter' name='filter' placeholder='filter examen...' data-test="examennaamList">
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <app-examennaam *ngFor='let localExamennaam of examennamen | examennaamFilter:filterExamennaamName' [examennaam]='localExamennaam'
+        (deleteExamennaam)='removeExamennaam($event)' data-test="examennaam"></app-examennaam>
+    </div>
+  </div>
+</div>
+

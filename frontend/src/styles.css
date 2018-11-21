@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+.loginform{
+    width: 40%;
+    margin: 0 auto;
+}
+body{
+    background-image: url('assets/foto.png');
+    background-size: cover;
+}
+
+.witruimte{
+    margin-top: 10%;
+}
+
+
+
+.proberen{
+    text-align:center;
+    }
+
+.padding{
+    padding:10px;
+}
+
+.achtergrond{
+    background-color:#41f4e5;
+}
+
+.toevoegen{
+    background-color:white;
+    opacity:0.75;
+    border-radius:10%
+}
+
+.center{
+    text-align:center;
+}
+
+.error{
+    color:#f44242;
+    background-color:white;
+    border-radius:25%;
+}
